@@ -27,8 +27,8 @@ void initGame(Snake *snake, Food *food){
     snake->direction.x = 1;
     snake->direction.y = 0;
 
-    food->position.x = rand() % WIDTH;
-    food->position.y = rand() % HEIGHT;
+    food->position.x = 1 + rand() % (WIDTH - 2);  
+    food->position.y = 1 + rand() % (HEIGHT - 2); 
 }
 
 void drawGame(Snake *snake, Food *food){
@@ -72,8 +72,8 @@ void updateGame(Snake *snake, Food *food, int *gameOver){
     // Food
     if (nextPosition.x == food->position.x && nextPosition.y == food->position.y) {
         snake->length++;  
-        food->position.x = rand() % WIDTH;  
-        food->position.y = rand() % HEIGHT; 
+        food->position.x = 1 + rand() % (WIDTH - 2);  
+        food->position.y = 1 + rand() % (HEIGHT - 2); 
     }
 
     // Check self
@@ -87,7 +87,7 @@ void updateGame(Snake *snake, Food *food, int *gameOver){
 void displayMenu(){
     clear();
     mvprintw(0, 0, "Welcome to the Snake Game!");
-    mvprintw(2, 0, "1 - Start the Game");
+    mvprintw(3, 0, "1 - Start the Game");
     mvprintw(4, 0, "2 - Exit");
     refresh();
 }
