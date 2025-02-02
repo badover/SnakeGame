@@ -87,8 +87,8 @@ void updateGame(Snake *snake, Food *food, int *gameOver){
 void displayMenu(){
     clear();
     mvprintw(0, 0, "Welcome to the Snake Game!");
-    mvprintw(3, 0, "1 - Start the Game");
-    mvprintw(4, 0, "2 - Exit");
+    mvprintw(2, 0, "1 - Start the Game");
+    mvprintw(3, 0, "2 - Exit");
     refresh();
 }
 
